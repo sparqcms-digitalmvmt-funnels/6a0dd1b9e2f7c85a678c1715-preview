@@ -8,6 +8,33 @@
 </script><script>/* >> Heatmap.com :: Snippet << */(function (h,e,a,t,m,ap) { (h._heatmap_paq = []).push([ 'setTrackerUrl', (h.heatUrl = e) + a]); h.hErrorLogs=h.hErrorLogs || []; ap=t.createElement('script');  ap.src=h.heatUrl+'preprocessor.min.js?sid='+m;  ap.defer=true; t.head.appendChild(ap); ['error', 'unhandledrejection'].forEach(function (ty) {     h.addEventListener(ty, function (et) { h.hErrorLogs.push({ type: ty, event: et }); }); });})(window,'https://dashboard.heatmap.com/','heatmap.php',document,5115);</script><meta name="description" content=""><title>presell</title><link rel="icon" href="favicon.ico" type="image/x-icon"><script>
 sessionStorage.setItem("test", true);
 
+
+(function trackEverflowPageConversion() {
+  var s = document.createElement("script");
+  s.src = "https://www.mxj5trk.com/scripts/main.js";
+  s.onload = function () {
+    EF.click({
+      offer_id: EF.urlParameter("oid") || EF.urlParameter("offer_id"),
+      affiliate_id: EF.urlParameter("affid") || EF.urlParameter("aff_id"),
+      sub1: EF.urlParameter("sub1") || EF.urlParameter("aff_sub"),
+      sub2: EF.urlParameter("sub2") || EF.urlParameter("aff_sub2"),
+      sub3: EF.urlParameter("sub3") || EF.urlParameter("aff_sub3"),
+      sub4: EF.urlParameter("sub4") || EF.urlParameter("aff_sub4"),
+      sub5: EF.urlParameter("sub5") || EF.urlParameter("aff_sub5"),
+      uid: EF.urlParameter("uid") || EF.urlParameter("url_id"),
+      source_id: EF.urlParameter("source_id"),
+      transaction_id: EF.urlParameter("_ef_transaction_id"),
+    }).then(function () {
+      EF.conversion({
+        aid: 503,
+        adv_event_id: 6,
+      });
+    });
+  };
+  document.head.appendChild(s);
+})();
+
+
 const ALLOWED_AFFILIATE_IDS = [];
 
 let nextPageSlug = null;
@@ -84,7 +111,7 @@ if (localStorage.getItem('sK_r')) {
 const route = async () => {
   if (localStorage.getItem('sK_r')) return JSON.parse(localStorage.getItem('sK_r'));
   const sessionId = MVMT.getSessionId() || localStorage.getItem("mvmt_session_id") || "";
-  const url = 'https://func-ab-test-events-staging-001.azurewebsites.net/api/checkRoute?id=6a0dd1b9e2f7c85a678c1715&v=177971404406535&sessionId='+sessionId;
+  const url = 'https://func-ab-test-events-staging-001.azurewebsites.net/api/checkRoute?id=6a0dd1b9e2f7c85a678c1715&v=177995906190796&sessionId='+sessionId;
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Network response was not ok');
